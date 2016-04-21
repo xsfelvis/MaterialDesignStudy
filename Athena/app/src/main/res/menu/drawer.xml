@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context=".Activity.MainActivity">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_item_book"
+            android:icon="@mipmap/ic_favorite"
+            android:title="@string/navigation_main"/>
+        <item
+            android:id="@+id/navigation_item_example"
+            android:icon="@mipmap/ic_favorite"
+            android:title="@string/navigation_example"/>
+        <item
+            android:id="@+id/navigation_item_blog"
+            android:icon="@mipmap/ic_favorite"
+            android:title="@string/navigation_my_blog"/>
+        <item
+            android:id="@+id/navigation_item_star"
+            android:icon="@mipmap/ic_favorite"
+            android:title="@string/navigation_mystar"/>
+
+        <item
+            android:id="@+id/navigation_item_about"
+            android:icon="@mipmap/ic_favorite"
+            android:title="@string/navigation_about"/>
+    </group>
+
+    <item android:title="其他">
+        <menu>
+
+
+            <item
+                android:id="@+id/sub_switch"
+                android:icon="@mipmap/ic_favorite"
+                android:title="@string/navigation_about"/>
+            <item
+                android:id="@+id/navigation_item_exit"
+                android:icon="@mipmap/ic_favorite"
+                android:title="@string/navigation_exit"/>
+
+
+        </menu>
+
+    </item>
+</menu>

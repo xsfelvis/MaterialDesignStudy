@@ -1,0 +1,37 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context=".Activity.MainActivity">
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:title="@string/action_settings"/>
+
+    <!--右上角侧滑Item-->
+
+    <item
+        android:id="@+id/action_theme"
+        android:icon="@mipmap/biz_main_menu_theme"
+        android:orderInCategory="100"
+        android:title="@string/theme"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_search"
+        android:icon="@mipmap/biz_main_menu_search"
+        android:orderInCategory="100"
+        android:title="@string/search"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_scan"
+        android:icon="@mipmap/biz_main_menu_scan"
+        android:orderInCategory="100"
+        android:title="@string/scan"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_setting"
+        android:icon="@mipmap/biz_main_menu_setting"
+        android:orderInCategory="100"
+        android:title="@string/setting"
+        app:showAsAction="never"/>
+</menu>
