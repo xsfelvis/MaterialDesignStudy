@@ -19,4 +19,6 @@
 
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
+
+    <string name="err_system">系统繁忙，请稍候再试</string>
 </resources>
