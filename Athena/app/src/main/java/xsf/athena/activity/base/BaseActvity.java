@@ -8,10 +8,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import com.orhanobut.logger.Logger;
-
 import xsf.athena.R;
 import xsf.athena.utils.AppManager;
+import xsf.athena.utils.LogUtil;
 
 /**
  * Author: xsf
@@ -33,7 +32,8 @@ public abstract class BaseActvity extends AppCompatActivity implements View.OnCl
         initData();
         //管理activity
         AppManager.getAppManager().addActivity(this);
-        Logger.d("目前Actvity 栈中有：" + AppManager.getAppManager().getActivityCount() + "个Actvity");
+        //Logger.d("目前Actvity 栈中有：" + AppManager.getAppManager().getActivityCount() + "个Actvity");
+        LogUtil.d("目前Actvity 栈中有：" + AppManager.getAppManager().getActivityCount() + "个Actvity");
         //  Log.d("BaseActivity", "当前Actvity 栈中有：" + AppManager.getAppManager().getActivityCount() + "个Actvity");
 
     }
