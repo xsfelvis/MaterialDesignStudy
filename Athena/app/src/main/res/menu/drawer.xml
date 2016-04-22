@@ -4,7 +4,7 @@
       tools:context=".Activity.MainActivity">
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/navigation_item_book"
+            android:id="@+id/nvItem_main"
             android:icon="@mipmap/ic_favorite"
             android:title="@string/navigation_main"/>
         <item
