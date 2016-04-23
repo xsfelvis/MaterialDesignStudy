@@ -48,7 +48,7 @@ public abstract class BaseActvity extends AppCompatActivity implements View.OnCl
     /**
      * 初始化View之前做的事
      */
-    protected abstract void init();
+    protected  void init(){};
 
     /**
      * 初始化空控件
@@ -58,7 +58,7 @@ public abstract class BaseActvity extends AppCompatActivity implements View.OnCl
     /**
      * 处理数据
      */
-    protected abstract void initData();
+    protected  void initData(){};
 
 
     /**

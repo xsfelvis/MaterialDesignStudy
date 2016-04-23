@@ -21,4 +21,7 @@
     <string name="drawer_close">Close</string>
 
     <string name="err_system">系统繁忙，请稍候再试</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
