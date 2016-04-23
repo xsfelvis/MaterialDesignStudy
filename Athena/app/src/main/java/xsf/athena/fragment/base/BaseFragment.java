@@ -24,7 +24,7 @@ public abstract class BaseFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mContentView = inflater.inflate(setLayoutResourceID(), container, false);
         mContext = getContext();
-        mProgressDialog = new ProgressDialog(mContext);
+        mProgressDialog = new ProgressDialog(getMyContext());
         mProgressDialog.setCanceledOnTouchOutside(false);//触摸其他区域diaog消息,防止4.0系统崩溃
         init();
         initView();
@@ -48,7 +48,7 @@ public abstract class BaseFragment extends Fragment {
         return (T) mContentView.findViewById(id);
     }
 
-    public Context getContext() {
+    public Context getMyContext() {
         return mContext;
     }
 
