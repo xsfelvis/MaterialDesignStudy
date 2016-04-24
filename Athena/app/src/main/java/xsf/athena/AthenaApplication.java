@@ -12,7 +12,7 @@ import com.orhanobut.logger.Logger;
 public class AthenaApplication extends Application {
     public static AthenaApplication AnthenaApp;
 
-    public static AthenaApplication get() {
+    public static AthenaApplication getApplication() {
         return AnthenaApp;
     }
 
