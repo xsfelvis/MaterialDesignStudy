@@ -17,7 +17,7 @@ import xsf.athena.R;
  */
 public class ToastUtil {
     public static void show(String text, int showtime) {
-        LayoutInflater inflater = (LayoutInflater) AthenaApplication.get().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater inflater = (LayoutInflater) AthenaApplication.getApplication().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View layout = inflater.inflate(R.layout.toast_layout, null);
         TextView content = (TextView) layout.findViewById(R.id.tv_content);
         if (!Tools.isEmpty(text)) {
@@ -25,7 +25,7 @@ public class ToastUtil {
         } else {
             content.setText(R.string.err_system);
         }
-        Toast toast = new Toast(AthenaApplication.get());
+        Toast toast = new Toast(AthenaApplication.getApplication());
         toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
         toast.setDuration(showtime);
         toast.setView(layout);
@@ -33,7 +33,7 @@ public class ToastUtil {
     }
 
     public static void showWithImg(String text, int showtime) {
-        LayoutInflater inflater = (LayoutInflater) AthenaApplication.get().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater inflater = (LayoutInflater) AthenaApplication.getApplication().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View layout = inflater.inflate(R.layout.toast_layout_with_img, null);
         TextView content = (TextView) layout.findViewById(R.id.tv_content);
         if (!Tools.isEmpty(text)) {
@@ -41,7 +41,7 @@ public class ToastUtil {
         } else {
             content.setText(R.string.err_system);
         }
-        Toast toast = new Toast(AthenaApplication.get());
+        Toast toast = new Toast(AthenaApplication.getApplication());
         toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
         toast.setDuration(showtime);
         toast.setView(layout);
