@@ -25,7 +25,7 @@ import xsf.athena.utils.Tools;
  * Created by _SOLID
  * Date:2016/4/18
  * Time:17:36
- * <p>
+ * <p/>
  * common fragment for list data display ,and you can extends this fragment for everywhere you want to display list data
  */
 public abstract class BaseRecyclerViewFragment<T> extends BaseFragment {
@@ -37,6 +37,7 @@ public abstract class BaseRecyclerViewFragment<T> extends BaseFragment {
     private LinearLayout mLLReloadWarp;
     private Button mBtnReload;
     private RVBaseAdapter<T> mAdapter;
+
 
     private int mCurrentAction = ACTION_REFRESH;
     private int mCurrentPageIndex = 1;
@@ -92,7 +93,6 @@ public abstract class BaseRecyclerViewFragment<T> extends BaseFragment {
     }
 
 
-
     /**
      * 刷新或者加载更多
      *
@@ -132,7 +132,7 @@ public abstract class BaseRecyclerViewFragment<T> extends BaseFragment {
 
                 @Override
                 public void onSuccess(String result) {
-                    LogUtil.d("onSuccess");
+                    //LogUtil.d("onSuccess");
                     if (mCurrentAction == ACTION_REFRESH) {
                         storeOfflineData(getUrl(1), result);
                     }
@@ -193,7 +193,7 @@ public abstract class BaseRecyclerViewFragment<T> extends BaseFragment {
     }
 
     private void onDataErrorReceived() {
-        LogUtil.d("onDataErrorReceived");
+       // LogUtil.d("onDataErrorReceived");
         mLLReloadWarp.setVisibility(View.VISIBLE);
         loadComplete();
     }
@@ -241,6 +241,7 @@ public abstract class BaseRecyclerViewFragment<T> extends BaseFragment {
      * @return
      */
     protected abstract RVBaseAdapter<T> setAdapter();
+
 
     /**
      * 对外提供layoutManager

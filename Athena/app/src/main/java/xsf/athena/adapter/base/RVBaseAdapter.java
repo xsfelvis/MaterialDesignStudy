@@ -31,29 +31,16 @@ public abstract class RVBaseAdapter<T> extends RecyclerView.Adapter<RVBaseAdapte
         mContext = context;
     }
 
-    /**
-     * 创建视图
-     *
-     * @param parent
-     * @param viewType
-     * @return
-     */
     @Override
-    public RvCommomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RVBaseAdapter.RvCommomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(mContext);
         View view = inflater.inflate(getItemLayoutID(viewType), parent, false);
         RvCommomViewHolder rvholder = new RvCommomViewHolder(view);
         return rvholder;
     }
 
-    /**
-     * 绑定数据
-     *
-     * @param holder
-     * @param position
-     */
     @Override
-    public void onBindViewHolder(RvCommomViewHolder holder, int position) {
+    public void onBindViewHolder(RVBaseAdapter.RvCommomViewHolder holder, int position) {
         runEnterAnimation(holder.itemView, position);
         onBindDataToView(holder, mBeans.get(position));//抽象方法交给子类去实现
     }
