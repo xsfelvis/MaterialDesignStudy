@@ -129,7 +129,7 @@ public class Tools {
         return sb.toString();
     }
 
-    public boolean isNullOrEmpty(String s) {
+    public static boolean isNullOrEmpty(String s) {
         return s == null || "".equals(s.trim());
     }
 
