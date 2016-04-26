@@ -44,7 +44,7 @@ public class MainActivity extends BaseActvity {
 
     @Override
     protected void initView() {
-        initToolBar();
+      //  initToolBar();
         setToobarTitle(getString(R.string.navigation_main));
 
         mDrawerLayout = IfindViewById(R.id.drawer_layout);

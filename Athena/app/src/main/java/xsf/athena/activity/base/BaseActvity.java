@@ -106,6 +106,8 @@ public abstract class BaseActvity extends AppCompatActivity implements View.OnCl
     }
 
     public void setToobarTitle(String title) {
+        initToolBar();
+
         if (toolbar != null) {
             this.title = title;
             //toolbar.setTitle(title);
