@@ -35,6 +35,7 @@ public class StudyListFragment extends BaseRecyclerViewFragment {
 
     @Override
     protected List parseData(String result) {
+        //LogUtil.d(result);
         List<GanHuoBean> list = null;
         JSONObject jsonObject = null;
         try {

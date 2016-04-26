@@ -2,6 +2,7 @@ package xsf.athena.fragment.base;
 
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -17,7 +18,6 @@ import xsf.athena.R;
 import xsf.athena.adapter.base.RVBaseAdapter;
 import xsf.athena.utils.FileUtils;
 import xsf.athena.utils.HttpUtil;
-import xsf.athena.utils.LogUtil;
 import xsf.athena.utils.ToastUtil;
 import xsf.athena.utils.Tools;
 
@@ -29,6 +29,7 @@ import xsf.athena.utils.Tools;
  * common fragment for list data display ,and you can extends this fragment for everywhere you want to display list data
  */
 public abstract class BaseRecyclerViewFragment<T> extends BaseFragment {
+    private static final String TAG = "BaseRvFrament";
 
     private static final int ACTION_REFRESH = 1;
     private static final int ACTION_LOAD_MORE = 2;
@@ -127,11 +128,12 @@ public abstract class BaseRecyclerViewFragment<T> extends BaseFragment {
             HttpUtil.getInstance().loadString(reqUrl, new HttpUtil.HttpCallBack() {
                 @Override
                 public void onLoading() {
-                    LogUtil.d("onLoading");
+                    Log.d(TAG, "onLoading");
                 }
 
                 @Override
                 public void onSuccess(String result) {
+                    Log.d(TAG, "onSucess");
                     //LogUtil.d("onSuccess");
                     if (mCurrentAction == ACTION_REFRESH) {
                         storeOfflineData(getUrl(1), result);
@@ -193,7 +195,7 @@ public abstract class BaseRecyclerViewFragment<T> extends BaseFragment {
     }
 
     private void onDataErrorReceived() {
-       // LogUtil.d("onDataErrorReceived");
+        // LogUtil.d("onDataErrorReceived");
         mLLReloadWarp.setVisibility(View.VISIBLE);
         loadComplete();
     }
