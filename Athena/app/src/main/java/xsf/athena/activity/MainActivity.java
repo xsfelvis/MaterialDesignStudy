@@ -49,7 +49,7 @@ public class MainActivity extends BaseActvity {
 
         mDrawerLayout = IfindViewById(R.id.drawer_layout);
         mNavigationView = IfindViewById(R.id.navigation_view);
-        mActionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close);
+        mActionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.drawer_open, R.string.drawer_close);
         mActionBarDrawerToggle.syncState();//该方法会自动和actionBar关联, 将开关的图片显示在了action上，如果不设置，也可以有抽屉的效果，不过是默认的图标
         mDrawerLayout.addDrawerListener(mActionBarDrawerToggle);
 
