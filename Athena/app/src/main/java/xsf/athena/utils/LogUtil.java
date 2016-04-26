@@ -1,5 +1,7 @@
 package xsf.athena.utils;
 
+import android.util.Log;
+
 import com.orhanobut.logger.Logger;
 
 import xsf.athena.BuildConfig;
@@ -17,6 +19,12 @@ public class LogUtil {
         if (isDebugMode) {
             Logger.d(message, args);
         }/*else  Log.d("xsf","shibai");*/
+    }
+
+    public static void d(String tag, String msg) {
+        if (isDebugMode) {
+            Log.d(tag, msg);
+        }
     }
 
 }

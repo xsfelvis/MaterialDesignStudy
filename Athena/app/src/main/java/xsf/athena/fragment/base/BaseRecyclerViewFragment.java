@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.jcodecraeer.xrecyclerview.ProgressStyle;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
@@ -18,14 +17,13 @@ import xsf.athena.R;
 import xsf.athena.adapter.base.RVBaseAdapter;
 import xsf.athena.utils.FileUtils;
 import xsf.athena.utils.HttpUtil;
-import xsf.athena.utils.ToastUtil;
 import xsf.athena.utils.Tools;
 
 /**
  * Created by _SOLID
  * Date:2016/4/18
  * Time:17:36
- * <p/>
+ * <p>
  * common fragment for list data display ,and you can extends this fragment for everywhere you want to display list data
  */
 public abstract class BaseRecyclerViewFragment<T> extends BaseFragment {
@@ -51,6 +49,7 @@ public abstract class BaseRecyclerViewFragment<T> extends BaseFragment {
 
     @Override
     protected void initView() {
+        //网络异常
         mLLReloadWarp = IFindViewById(R.id.ll_reload_wrap);
         mBtnReload = IFindViewById(R.id.btn_reload);
 
@@ -103,7 +102,7 @@ public abstract class BaseRecyclerViewFragment<T> extends BaseFragment {
         mCurrentAction = action;
         switch (mCurrentAction) {
             case ACTION_REFRESH:
-                mAdapter.clear();
+                // mAdapter.clear();
                 mCurrentPageIndex = 1;
                 break;
             case ACTION_LOAD_MORE:
@@ -118,12 +117,14 @@ public abstract class BaseRecyclerViewFragment<T> extends BaseFragment {
      * 加载数据
      */
     private void loadData() {
+        statrProgressDialog();
+
         final String reqUrl = getUrl(mCurrentPageIndex);
         if (!Tools.isNetworkConnected(getMyContext())) {
             //无网络
             String result = obtainOfflineData(getUrl(1));
             onDataSuccessReceived(result);
-            ToastUtil.show("当前无网络连接", Toast.LENGTH_SHORT);
+            // ToastUtil.show("当前无网络连接", Toast.LENGTH_SHORT);
         } else {
             HttpUtil.getInstance().loadString(reqUrl, new HttpUtil.HttpCallBack() {
                 @Override
@@ -148,6 +149,7 @@ public abstract class BaseRecyclerViewFragment<T> extends BaseFragment {
                 }
             });
         }
+        stopProgressDialog();
 
     }
 

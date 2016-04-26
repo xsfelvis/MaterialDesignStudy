@@ -158,7 +158,7 @@ public class HttpUtil {
     }
 
     public void loadImage(String url, ImageView iv, boolean isCenterCrop) {
-        loadImageWithHolder(url, iv, R.mipmap.xsfelvis, isCenterCrop);
+        loadImageWithHolder(url, iv, R.mipmap.ic_default, isCenterCrop);
     }
 
     /**

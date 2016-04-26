@@ -28,7 +28,7 @@ public class StudyFragment extends BaseFragment {
 
     @Override
     protected void initView() {
-        mTitles = new String[]{"all", "休息视频", "福利", "Android", "iOS", "拓展资源", "前端", "瞎推荐"};
+        mTitles = new String[]{"all", "Android", "休息视频", "福利", "iOS", "拓展资源", "前端", "瞎推荐"};
         mTabLayout = IFindViewById(R.id.tl_study);
         mViewPager = IFindViewById(R.id.viewpager);
         mViewPager.setOffscreenPageLimit(3);

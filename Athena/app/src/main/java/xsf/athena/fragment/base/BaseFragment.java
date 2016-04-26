@@ -15,20 +15,21 @@ import android.view.ViewGroup;
  * Email: xsf_uestc_ncl@163.com
  */
 public abstract class BaseFragment extends Fragment {
+    private static final String TAG = "BaseFragment";
     private View mContentView;
     private Context mContext;
-    private ProgressDialog mProgressDialog;
+    protected ProgressDialog mProgressDialog;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mContentView = inflater.inflate(setLayoutResourceID(), container, false);
         mContext = getContext();
-        mProgressDialog = new ProgressDialog(getMyContext());
-        mProgressDialog.setCanceledOnTouchOutside(false);//触摸其他区域diaog消息,防止4.0系统崩溃
+
         init();
         initView();
         initData();
+
         return mContentView;
     }
 
@@ -58,5 +59,20 @@ public abstract class BaseFragment extends Fragment {
 
     protected ProgressDialog getProgressDialog() {
         return mProgressDialog;
+    }
+
+    protected void statrProgressDialog() {
+        if (mProgressDialog == null) {
+            mProgressDialog = new ProgressDialog(getMyContext());
+            mProgressDialog.setCanceledOnTouchOutside(false);//触摸其他区域diaog消息,防止4.0系统崩溃
+            mProgressDialog.show();
+        }
+    }
+
+    protected void stopProgressDialog() {
+        if (mProgressDialog != null) {
+            mProgressDialog.dismiss();
+            mProgressDialog = null;
+        }
     }
 }

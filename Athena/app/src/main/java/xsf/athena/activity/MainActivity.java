@@ -17,6 +17,7 @@ import xsf.athena.utils.LogUtil;
 
 public class MainActivity extends BaseActvity {
     private static String TAG = "MainActvity";
+    private static String KEY = "currentSelectMenuIndex";
     private static int mSelectMenuIndex = 0;
     private DrawerLayout mDrawerLayout;
     private NavigationView mNavigationView;
@@ -27,6 +28,9 @@ public class MainActivity extends BaseActvity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (savedInstanceState != null) {
+            mSelectMenuIndex = savedInstanceState.getInt(KEY, 0);
+        }
     }
 
     @Override
@@ -43,8 +47,14 @@ public class MainActivity extends BaseActvity {
     }
 
     @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(KEY, mSelectMenuIndex);
+    }
+
+    @Override
     protected void initView() {
-      //  initToolBar();
+        //  initToolBar();
         setToobarTitle(getString(R.string.navigation_main));
 
         mDrawerLayout = IfindViewById(R.id.drawer_layout);
@@ -65,7 +75,7 @@ public class MainActivity extends BaseActvity {
     private void initDefalueFragment() {
         mDefaultFragment = FragmentUtil.createFragment(StudyFragment.class);
         mFragmentManager.beginTransaction().add(R.id.frame_content, mDefaultFragment).commit();
-        mNavigationView.getMenu().getItem(0).setChecked(true);
+        mNavigationView.getMenu().getItem(mSelectMenuIndex).setChecked(true);
         // TODO: 2016/4/23
 
     }
@@ -105,7 +115,9 @@ public class MainActivity extends BaseActvity {
         mDefaultFragment = switchTo;
 
 
+
     }
+
 
 
 }

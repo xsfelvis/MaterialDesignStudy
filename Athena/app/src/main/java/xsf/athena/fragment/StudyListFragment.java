@@ -17,6 +17,7 @@ import java.util.List;
 
 import xsf.athena.R;
 import xsf.athena.activity.WebViewActivity;
+import xsf.athena.adapter.StudyPagerAdapter;
 import xsf.athena.adapter.base.RVBaseAdapter;
 import xsf.athena.bean.GanHuoBean;
 import xsf.athena.fragment.base.BaseRecyclerViewFragment;
@@ -54,7 +55,7 @@ public class StudyListFragment extends BaseRecyclerViewFragment {
 
     @Override
     protected String getUrl(int currentPageIndex) {
-        mType = getArguments().getString("type");
+        mType = getArguments().getString(StudyPagerAdapter.TYPE_KEY);
         String url = Apis.GanHuo + "/" + mType + "/10/" + currentPageIndex;
         LogUtil.d(url);
         return url;
@@ -93,7 +94,7 @@ public class StudyListFragment extends BaseRecyclerViewFragment {
                 Intent intent = new Intent(getMyContext(), WebViewActivity.class);
                 intent.putExtra(WebViewActivity.URL, mBeans.get(position - 1).url);
                 getMyContext().startActivity(intent);
-                //ToastUtil.show("你点我我了", Toast.LENGTH_SHORT);
+                //ToastUtil.show("你点到我了", Toast.LENGTH_SHORT);
             }
         };
 

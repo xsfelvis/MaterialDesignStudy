@@ -15,6 +15,7 @@ import xsf.athena.utils.FragmentUtil;
  * Email: xsf_uestc_ncl@163.com
  */
 public class StudyPagerAdapter extends FragmentStatePagerAdapter {
+    public static final String TYPE_KEY = "type";
     private static String[] mTitles;
 
     public StudyPagerAdapter(FragmentManager fm, String[] titles) {
@@ -32,7 +33,7 @@ public class StudyPagerAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         Fragment fragment = FragmentUtil.createFragment(StudyListFragment.class, false);
         Bundle bundle = new Bundle();
-        bundle.putString("type", mTitles[position]);
+        bundle.putString(TYPE_KEY, mTitles[position]);
         fragment.setArguments(bundle);
         return fragment;
     }
