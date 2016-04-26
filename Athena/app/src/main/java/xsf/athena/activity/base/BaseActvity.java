@@ -18,7 +18,7 @@ import xsf.athena.utils.LogUtil;
  * Email: xsf_uestc_ncl@163.com
  */
 public abstract class BaseActvity extends AppCompatActivity implements View.OnClickListener {
-    protected Toolbar toolbar;
+    protected Toolbar mToolbar;
     protected Context mContext;
     protected String title;
 
@@ -95,22 +95,22 @@ public abstract class BaseActvity extends AppCompatActivity implements View.OnCl
     }
 
     protected void initToolBar() {
-        toolbar = IfindViewById(R.id.toolbar);
-        if (toolbar != null) {
-            //toolbar.setLogo(R.mipmap.ic_top);
-            toolbar.setBackgroundColor(getResources().getColor(R.color.theme_color));
-            // toolbar.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.theme_color));
-            toolbar.setTitleTextAppearance(this, R.style.ToolBarTitleTextApperance);
-            setSupportActionBar(toolbar);
+        mToolbar = IfindViewById(R.id.toolbar);
+        if (mToolbar != null) {
+            //mToolbar.setLogo(R.mipmap.ic_top);
+            mToolbar.setBackgroundColor(getResources().getColor(R.color.theme_color));
+            // mToolbar.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.theme_color));
+            mToolbar.setTitleTextAppearance(this, R.style.ToolBarTitleTextApperance);
+            setSupportActionBar(mToolbar);
         }
     }
 
     public void setToobarTitle(String title) {
         initToolBar();
 
-        if (toolbar != null) {
+        if (mToolbar != null) {
             this.title = title;
-            //toolbar.setTitle(title);
+            //mToolbar.setTitle(title);
             getSupportActionBar().setTitle(title);
         }
     }

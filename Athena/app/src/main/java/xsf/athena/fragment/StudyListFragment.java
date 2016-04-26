@@ -1,10 +1,10 @@
 package xsf.athena.fragment;
 
+import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -16,13 +16,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import xsf.athena.R;
+import xsf.athena.activity.WebViewActivity;
 import xsf.athena.adapter.base.RVBaseAdapter;
 import xsf.athena.bean.GanHuoBean;
 import xsf.athena.fragment.base.BaseRecyclerViewFragment;
 import xsf.athena.utils.Apis;
 import xsf.athena.utils.HttpUtil;
 import xsf.athena.utils.LogUtil;
-import xsf.athena.utils.ToastUtil;
 
 /**
  * Author: xsf
@@ -81,7 +81,6 @@ public class StudyListFragment extends BaseRecyclerViewFragment {
                 holder.setText(R.id.tv_people, bean.who);
                 holder.setText(R.id.tv_time, bean.publishedAt.substring(0, 10));
                 holder.setText(R.id.tv_tag, bean.type);
-
             }
 
             @Override
@@ -91,8 +90,10 @@ public class StudyListFragment extends BaseRecyclerViewFragment {
 
             @Override
             protected void onItemClick(int position) {
-                //super.onItemClick(position);
-                ToastUtil.show("你点我我了", Toast.LENGTH_SHORT);
+                Intent intent = new Intent(getMyContext(), WebViewActivity.class);
+                intent.putExtra(WebViewActivity.URL, mBeans.get(position - 1).url);
+                getMyContext().startActivity(intent);
+                //ToastUtil.show("你点我我了", Toast.LENGTH_SHORT);
             }
         };
 

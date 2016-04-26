@@ -2,7 +2,6 @@ package xsf.athena.adapter;
 
 
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -43,8 +42,5 @@ public class StudyPagerAdapter extends FragmentStatePagerAdapter {
         return mTitles.length;
     }
 
-    @Override
-    public void restoreState(Parcelable state, ClassLoader loader) {
-        super.restoreState(state, loader);
-    }
+
 }
