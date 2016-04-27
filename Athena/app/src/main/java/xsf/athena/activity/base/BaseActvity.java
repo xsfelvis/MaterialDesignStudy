@@ -48,7 +48,10 @@ public abstract class BaseActvity extends AppCompatActivity implements View.OnCl
     /**
      * 初始化View之前做的事
      */
-    protected  void init(){};
+    protected void init() {
+    }
+
+
 
     /**
      * 初始化空控件
@@ -58,7 +61,7 @@ public abstract class BaseActvity extends AppCompatActivity implements View.OnCl
     /**
      * 处理数据
      */
-    protected  void initData(){};
+    protected void initData() {}
 
 
     /**
@@ -106,11 +109,10 @@ public abstract class BaseActvity extends AppCompatActivity implements View.OnCl
     }
 
     public void setToobarTitle(String title) {
-        initToolBar();
 
         if (mToolbar != null) {
             this.title = title;
-            //mToolbar.setTitle(title);
+            //  mToolbar.setTitle(title);
             getSupportActionBar().setTitle(title);
         }
     }

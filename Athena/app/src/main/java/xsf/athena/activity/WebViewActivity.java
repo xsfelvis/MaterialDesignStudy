@@ -23,6 +23,7 @@ public class WebViewActivity extends BaseActvity {
 
     @Override
     protected void init() {
+        initToolBar();
         mUrl = getIntent().getExtras().getString(URL);
     }
 
