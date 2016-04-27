@@ -17,6 +17,7 @@ import xsf.athena.R;
 import xsf.athena.adapter.base.RVBaseAdapter;
 import xsf.athena.utils.FileUtils;
 import xsf.athena.utils.HttpUtil;
+import xsf.athena.utils.LogUtil;
 import xsf.athena.utils.Tools;
 
 /**
@@ -47,6 +48,9 @@ public abstract class BaseRecyclerViewFragment<T> extends BaseFragment {
         return R.layout.fragment_base_recycler_view;
     }
 
+    /**
+     *
+     */
     @Override
     protected void initView() {
         //网络异常
@@ -63,6 +67,13 @@ public abstract class BaseRecyclerViewFragment<T> extends BaseFragment {
         mAdapter = setAdapter();
         mRecyclerView.setAdapter(mAdapter);
 
+
+    }
+
+    @Override
+    protected void initData() {
+
+        //下拉刷新监听
         mRecyclerView.setLoadingListener(new XRecyclerView.LoadingListener() {
             @Override
             public void onRefresh() {
@@ -75,6 +86,7 @@ public abstract class BaseRecyclerViewFragment<T> extends BaseFragment {
 
             }
         });
+        //重新加载按钮
         mBtnReload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,12 +95,7 @@ public abstract class BaseRecyclerViewFragment<T> extends BaseFragment {
             }
         });
 
-
-    }
-
-    @Override
-    protected void initData() {
-        //super.initData();
+        //设置recycleView为可以下拉刷新,放置位置靠后会自动刷新一下
         mRecyclerView.setRefreshing(true);
     }
 
@@ -109,7 +116,17 @@ public abstract class BaseRecyclerViewFragment<T> extends BaseFragment {
                 mCurrentPageIndex++;
                 break;
         }
+        /*new Thread(new Runnable() {
+            @Override
+            public void run() {
+                //加载数据
+                loadData();
+            }
+        }).start();
+*/
+        //加载数据
         loadData();
+
 
     }
 
@@ -117,12 +134,13 @@ public abstract class BaseRecyclerViewFragment<T> extends BaseFragment {
      * 加载数据
      */
     private void loadData() {
-        statrProgressDialog();
+
 
         final String reqUrl = getUrl(mCurrentPageIndex);
         if (!Tools.isNetworkConnected(getMyContext())) {
             //无网络
             String result = obtainOfflineData(getUrl(1));
+            LogUtil.d("无网络" + result);
             onDataSuccessReceived(result);
             // ToastUtil.show("当前无网络连接", Toast.LENGTH_SHORT);
         } else {
@@ -149,7 +167,7 @@ public abstract class BaseRecyclerViewFragment<T> extends BaseFragment {
                 }
             });
         }
-        stopProgressDialog();
+
 
     }
 
@@ -203,7 +221,7 @@ public abstract class BaseRecyclerViewFragment<T> extends BaseFragment {
     }
 
     /**
-     * 获取离线数据
+     * 获取离线json数据
      *
      * @param url
      * @return
@@ -220,12 +238,13 @@ public abstract class BaseRecyclerViewFragment<T> extends BaseFragment {
     }
 
     /**
-     * 获取文件离线数据
+     * 获取文件离线数据目录
      *
      * @param url
      * @return
      */
     private String getOfflineDir(String url) {
+        LogUtil.d(FileUtils.getCacheDir(getMyContext()) + File.separator + "offline_gan_huo_cache" + File.separator + Tools.md5(url));
         return FileUtils.getCacheDir(getMyContext()) + File.separator + "offline_gan_huo_cache" + File.separator + Tools.md5(url);
 
     }

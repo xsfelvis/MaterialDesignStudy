@@ -170,7 +170,7 @@ public class HttpUtil {
      */
     public void loadImageWithHolder(String url, ImageView iv, int placeholderResID, boolean isCenterCrop) {
         Picasso.with(AthenaApplication.getApplication()).load(url).placeholder(placeholderResID).fit().into(iv);
-        RequestCreator creator = Picasso.with(AthenaApplication.getApplication()).load(url).placeholder(R.mipmap.xsfelvis);
+        RequestCreator creator = Picasso.with(AthenaApplication.getApplication()).load(url).placeholder(R.mipmap.ic_default).error(R.mipmap.ic_image_loadfail);
         if (isCenterCrop) {
             creator.centerCrop();
         }
