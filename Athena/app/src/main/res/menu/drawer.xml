@@ -8,9 +8,9 @@
             android:icon="@mipmap/ic_favorite"
             android:title="@string/navigation_main"/>
         <item
-            android:id="@+id/navigation_item_example"
+            android:id="@+id/nvItem_news"
             android:icon="@mipmap/ic_favorite"
-            android:title="@string/navigation_example"/>
+            android:title="@string/navigation_news"/>
         <item
             android:id="@+id/navigation_item_blog"
             android:icon="@mipmap/ic_favorite"
