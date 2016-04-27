@@ -14,7 +14,7 @@ import java.io.File;
 import java.util.List;
 
 import xsf.athena.R;
-import xsf.athena.adapter.base.RVBaseAdapter;
+import xsf.athena.adapter.base.RVXBaseAdapter;
 import xsf.athena.utils.FileUtils;
 import xsf.athena.utils.HttpUtil;
 import xsf.athena.utils.LogUtil;
@@ -36,7 +36,7 @@ public abstract class BaseXRecyclerViewFragment<T> extends BaseFragment {
     private XRecyclerView mRecyclerView;
     private LinearLayout mLLReloadWarp;
     private Button mBtnReload;
-    private RVBaseAdapter<T> mAdapter;
+    private RVXBaseAdapter<T> mAdapter;
 
 
     private int mCurrentAction = ACTION_REFRESH;
@@ -263,7 +263,7 @@ public abstract class BaseXRecyclerViewFragment<T> extends BaseFragment {
      *
      * @return
      */
-    protected abstract RVBaseAdapter<T> setAdapter();
+    protected abstract RVXBaseAdapter<T> setAdapter();
 
 
     /**

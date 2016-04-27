@@ -20,31 +20,34 @@ import xsf.athena.utils.Tools;
  * Time: created at 2016/4/24.
  * Email: xsf_uestc_ncl@163.com
  */
-public abstract class RVBaseAdapter<T> extends RecyclerView.Adapter<RVBaseAdapter.RvCommomViewHolder> {
+public abstract class RVXBaseAdapter<T> extends RecyclerView.Adapter<RVXBaseAdapter.RvCommomViewHolder> {
     protected List<T> mBeans;
     protected Context mContext;
     protected boolean mAnimateItems = false;
     protected int mLastAnimatedPosition = -1;
 
-    public RVBaseAdapter(List<T> beans, Context context) {
+    public RVXBaseAdapter(List<T> beans, Context context) {
         mBeans = beans;
         mContext = context;
     }
 
+    //创建viewholder
     @Override
-    public RVBaseAdapter.RvCommomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RVXBaseAdapter.RvCommomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(mContext);
         View view = inflater.inflate(getItemLayoutID(viewType), parent, false);
         RvCommomViewHolder rvholder = new RvCommomViewHolder(view);
         return rvholder;
     }
 
+    //绑定数据到视图
     @Override
-    public void onBindViewHolder(RVBaseAdapter.RvCommomViewHolder holder, int position) {
+    public void onBindViewHolder(RVXBaseAdapter.RvCommomViewHolder holder, int position) {
         runEnterAnimation(holder.itemView, position);
         onBindDataToView(holder, mBeans.get(position));//抽象方法交给子类去实现
     }
 
+    //获取item大小
     @Override
     public int getItemCount() {
         return mBeans.size();
