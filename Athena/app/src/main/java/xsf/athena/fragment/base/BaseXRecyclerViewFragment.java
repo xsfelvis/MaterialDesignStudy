@@ -27,7 +27,7 @@ import xsf.athena.utils.Tools;
  * <p>
  * common fragment for list data display ,and you can extends this fragment for everywhere you want to display list data
  */
-public abstract class BaseRecyclerViewFragment<T> extends BaseFragment {
+public abstract class BaseXRecyclerViewFragment<T> extends BaseFragment {
     private static final String TAG = "BaseRvFrament";
 
     private static final int ACTION_REFRESH = 1;

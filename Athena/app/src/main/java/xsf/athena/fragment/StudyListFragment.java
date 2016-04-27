@@ -20,7 +20,7 @@ import xsf.athena.activity.WebViewActivity;
 import xsf.athena.adapter.StudyPagerAdapter;
 import xsf.athena.adapter.base.RVBaseAdapter;
 import xsf.athena.bean.GanHuoBean;
-import xsf.athena.fragment.base.BaseRecyclerViewFragment;
+import xsf.athena.fragment.base.BaseXRecyclerViewFragment;
 import xsf.athena.utils.Apis;
 import xsf.athena.utils.HttpUtil;
 import xsf.athena.utils.LogUtil;
@@ -30,7 +30,7 @@ import xsf.athena.utils.LogUtil;
  * Time: created at 2016/4/23.
  * Email: xsf_uestc_ncl@163.com
  */
-public class StudyListFragment extends BaseRecyclerViewFragment {
+public class StudyListFragment extends BaseXRecyclerViewFragment {
     private String mType;
     private RVBaseAdapter mRVBaseAdapter;
 
