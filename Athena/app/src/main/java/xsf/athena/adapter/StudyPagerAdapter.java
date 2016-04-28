@@ -7,7 +7,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import xsf.athena.fragment.StudyListFragment;
-import xsf.athena.utils.FragmentUtil;
+import xsf.athena.utils.FragmentManagerUtil;
 
 /**
  * Author: xsf
@@ -31,7 +31,7 @@ public class StudyPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        Fragment fragment = FragmentUtil.createFragment(StudyListFragment.class, false);
+        Fragment fragment = FragmentManagerUtil.createFragment(StudyListFragment.class, false);
         Bundle bundle = new Bundle();
         bundle.putString(TYPE_KEY, mTitles[position]);
         fragment.setArguments(bundle);

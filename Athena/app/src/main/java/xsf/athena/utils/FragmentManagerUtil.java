@@ -10,7 +10,7 @@ import xsf.athena.fragment.base.BaseFragment;
  * Time: created at 2016/4/23.
  * Email: xsf_uestc_ncl@163.com
  */
-public class FragmentUtil {
+public class FragmentManagerUtil {
     private static Map<String, BaseFragment> fragmentlist = new HashMap<>();
 
     public static BaseFragment createFragment(Class<?> clazz, boolean isAddList) {
@@ -34,5 +34,9 @@ public class FragmentUtil {
 
     public static BaseFragment createFragment(Class<?> clazz) {
         return createFragment(clazz, true);
+    }
+
+    public static void clearFragmentList() {
+        fragmentlist.clear();
     }
 }
