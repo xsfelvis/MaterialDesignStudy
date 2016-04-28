@@ -5,17 +5,19 @@ import android.content.Context;
 
 import java.util.Stack;
 
+
 /**
- * Author：Vv on 2015/7/21 11:38
- * Mail：envyfan@qq.com
- * Description：activity堆栈式管理
+ * Author: xsf
+ * Time: created at 2016/4/22.
+ * Email: xsf_uestc_ncl@163.com
  */
 public class AppManager {
 
     private static Stack<Activity> activityStack;
     private static AppManager instance;
 
-    private AppManager() {}
+    private AppManager() {
+    }
 
     /**
      * 单一实例
@@ -104,7 +106,7 @@ public class AppManager {
         return null;
     }
 
-    public static Stack<Activity> getActivitys(){
+    public static Stack<Activity> getActivitys() {
         return activityStack;
     }
 
@@ -114,17 +116,22 @@ public class AppManager {
     public void AppExit(Context context) {
         try {
             finishAllActivity();
+            //清空fragmnet的map
+            FragmentManagerUtil.clearFragmentList();
             // 杀死该应用进程
             android.os.Process.killProcess(android.os.Process.myPid());
+
             System.exit(0);
         } catch (Exception e) {
         }
     }
 
-    /**返回当前Activity栈中Activity的数量
+    /**
+     * 返回当前Activity栈中Activity的数量
+     *
      * @return
      */
-    public int getActivityCount(){
+    public int getActivityCount() {
         int count = activityStack.size();
         return count;
     }
@@ -134,8 +141,8 @@ public class AppManager {
      */
     public void removeActivity(Activity activity) {
         if (activityStack == null) {
-           return;
-        }else if(activityStack.contains(activity)){
+            return;
+        } else if (activityStack.contains(activity)) {
             activityStack.remove(activity);
         }
 
