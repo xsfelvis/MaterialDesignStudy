@@ -18,7 +18,7 @@ import java.util.List;
 import xsf.athena.R;
 import xsf.athena.activity.WebViewActivity;
 import xsf.athena.adapter.StudyPagerAdapter;
-import xsf.athena.adapter.base.RVBaseAdapter;
+import xsf.athena.adapter.base.RVXBaseAdapter;
 import xsf.athena.bean.GanHuoBean;
 import xsf.athena.fragment.base.BaseXRecyclerViewFragment;
 import xsf.athena.utils.Apis;
@@ -32,7 +32,7 @@ import xsf.athena.utils.LogUtil;
  */
 public class StudyListFragment extends BaseXRecyclerViewFragment {
     private String mType;
-    private RVBaseAdapter mRVBaseAdapter;
+    private RVXBaseAdapter mRVBaseAdapter;
 
     @Override
     protected List parseData(String result) {
@@ -62,8 +62,8 @@ public class StudyListFragment extends BaseXRecyclerViewFragment {
     }
 
     @Override
-    protected RVBaseAdapter setAdapter() {
-        mRVBaseAdapter = new RVBaseAdapter<GanHuoBean>(new ArrayList<GanHuoBean>(), getMyContext()) {
+    protected RVXBaseAdapter setAdapter() {
+        mRVBaseAdapter = new RVXBaseAdapter<GanHuoBean>(new ArrayList<GanHuoBean>(), getMyContext()) {
 
             protected void onBindDataToView(RvCommomViewHolder holder, GanHuoBean bean) {
                 holder.getView(R.id.tv_desc).setVisibility(View.GONE);
