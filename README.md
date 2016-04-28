@@ -15,7 +15,7 @@ Des：该项目主要用来学习Material Design Support Library和一些android
 - fragment实例化的优化
 - 一些好用的工具类（AppManager、DoubleClickHelper等）
 
-##效果展示
+###效果展示
 <p><img src="Athena/screenshots/侧滑栏.jpg" width="32%" />
 <img src="Athena/screenshots/主页.jpg" width="32%" />
 <img src="Athena/screenshots/内容.jpg" width="32%" />
@@ -23,7 +23,7 @@ Des：该项目主要用来学习Material Design Support Library和一些android
 <img src="Athena/screenshots/webviewAct.jpg" width="32%" />
 <img src="Athena/screenshots/福利.jpg" width="32%" />
 
-##使用到的开源库，感谢；感谢使用到图标的其他开源项目和一些精彩代码
+###使用到的开源库，感谢；感谢使用到图标的其他开源项目和一些精彩代码
 - [XRecyclerView](https://github.com/jianghejie/XRecyclerView)
 - [okhttp](https://github.com/square/okhttp)
 - [gson](https://github.com/google/gson)
