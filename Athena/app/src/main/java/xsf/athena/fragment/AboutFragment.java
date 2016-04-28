@@ -9,7 +9,7 @@ import xsf.athena.fragment.base.BaseFragment;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class TestFragment extends BaseFragment {
+public class AboutFragment extends BaseFragment {
 
 
     @Override

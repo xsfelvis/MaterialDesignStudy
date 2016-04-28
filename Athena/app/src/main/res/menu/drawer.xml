@@ -31,11 +31,11 @@
 
 
             <item
-                android:id="@+id/sub_switch"
+                android:id="@+id/sub_about"
                 android:icon="@mipmap/ic_favorite"
                 android:title="@string/navigation_about"/>
             <item
-                android:id="@+id/navigation_item_exit"
+                android:id="@+id/nvsub_exit"
                 android:icon="@mipmap/ic_favorite"
                 android:title="@string/navigation_exit"/>
 
