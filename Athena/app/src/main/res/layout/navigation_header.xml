@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:gravity="center"
-        android:text="Android爱好者"
+        android:text="xsf"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="18dp"
         />
