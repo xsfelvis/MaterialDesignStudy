@@ -16,4 +16,6 @@
     <!-- 圆角-->
     <dimen name="corner">6dp</dimen>
     <dimen name="asset_left_right">16dp</dimen>
+    <dimen name="card_margin">5dp</dimen>
+
 </resources>

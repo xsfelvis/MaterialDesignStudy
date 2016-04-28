@@ -10,11 +10,11 @@
         <item
             android:id="@+id/nvItem_news"
             android:icon="@mipmap/ic_favorite"
-            android:title="@string/navigation_news"/>
+            android:title="@string/navigation_laughPic"/>
         <item
             android:id="@+id/navigation_item_blog"
             android:icon="@mipmap/ic_favorite"
-            android:title="@string/navigation_my_blog"/>
+            android:title="@string/navigation_weath"/>
         <item
             android:id="@+id/navigation_item_star"
             android:icon="@mipmap/ic_favorite"
@@ -23,7 +23,7 @@
         <item
             android:id="@+id/navigation_item_about"
             android:icon="@mipmap/ic_favorite"
-            android:title="@string/navigation_about"/>
+            android:title="@string/navigation_mystar"/>
     </group>
 
     <item android:title="其他">
