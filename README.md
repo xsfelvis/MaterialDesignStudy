@@ -4,7 +4,7 @@ Des：该项目主要用来学习Material Design Support Library和一些android
 - 有趣的搞笑图片（尝试了MVP设计框架）
 
 其中分别尝试了`不同的实现方式`，解析干货集中营时采用了开源库XRecyclerView提供的刷新，而搞笑图片模块则是使用SwipeRefreshLayout+RecyclerView的刷新方式。本项目主要是用作练习，包含的主要技术点有：
-- 抽象和封装（BaseActvity）
+- 抽象和封装
 - MVP的初步使用
 - 封装okhttp解析网络数据
 - okhttp配合gson快速解析
