@@ -16,7 +16,6 @@ public class ImagePresenterImpl implements ImagePresenter, ImageModelImpl.OnLoad
     private ImageModel mImageModel;
     private ImgView mImageView;
 
-
     public ImagePresenterImpl(ImgView imageView) {
         this.mImageModel = new ImageModelImpl();
         this.mImageView = imageView;
