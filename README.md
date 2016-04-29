@@ -9,7 +9,6 @@ Des：该项目主要用来学习Material Design Support Library和一些android
 - 封装okhttp解析网络数据
 - okhttp配合gson快速解析
 - RecyclerView的使用
-- RvAdapter
 - 缓存
 - 不同的下拉刷新
 - fragment实例化的优化
