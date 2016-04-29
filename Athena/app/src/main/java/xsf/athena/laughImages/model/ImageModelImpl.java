@@ -30,21 +30,6 @@ public class ImageModelImpl implements ImageModel {
     public void loadImageList(final OnLoadImageListListener listener) {
         String url = Apis.IMAGES_URL;
         LogUtil.d(url);
-        /*List<GanHuoBean> list = null;
-        JSONObject jsonObject = null;
-        try {
-            jsonObject = new JSONObject(result);
-            Gson gson = new Gson();
-            // list = gson.fromJson(jsonObject.getString("results"), new TypeToken<List<GanHuoBean>>() {}.getType());
-            list = gson.fromJson(jsonObject.getString("results"), new TypeToken<List<GanHuoBean>>() {
-            }.getType());
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-            list = new ArrayList<>();
-        }
-        return list;
-       */
         HttpUtil.getInstance().loadString(url, new HttpUtil.HttpCallBack() {
             @Override
             public void onLoading() {

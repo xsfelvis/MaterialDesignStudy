@@ -13,5 +13,5 @@ public interface ImgView {
     void addImages(List<ImageBean> list);
     void showProgress();
     void hideProgress();
-    void showLoadFailMsg();
+    void loadFailMsg();
 }

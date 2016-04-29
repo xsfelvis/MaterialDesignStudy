@@ -44,7 +44,7 @@ public abstract class RVXBaseAdapter<T> extends RecyclerView.Adapter<RVXBaseAdap
     @Override
     public void onBindViewHolder(RVXBaseAdapter.RvCommomViewHolder holder, int position) {
         runEnterAnimation(holder.itemView, position);
-        onBindDataToView(holder, mBeans.get(position));//抽象方法交给子类去实现
+        onBindData(holder, mBeans.get(position));//抽象方法交给子类去实现
     }
 
     //获取item大小
@@ -59,7 +59,7 @@ public abstract class RVXBaseAdapter<T> extends RecyclerView.Adapter<RVXBaseAdap
      * @param holder
      * @param bean
      */
-    protected abstract void onBindDataToView(RvCommomViewHolder holder, T bean);
+    protected abstract void onBindData(RvCommomViewHolder holder, T bean);
 
     /**
      * 取得ItemView的布局文件
@@ -110,6 +110,9 @@ public abstract class RVXBaseAdapter<T> extends RecyclerView.Adapter<RVXBaseAdap
     }*/
 
 
+    /**
+     * 抽象出来viewholder具体支持
+     */
     public class RvCommomViewHolder extends RecyclerView.ViewHolder {
         private final SparseArray<View> mViews;
         public View itemView;
@@ -143,7 +146,7 @@ public abstract class RVXBaseAdapter<T> extends RecyclerView.Adapter<RVXBaseAdap
         }
 
         /**
-         * 加载drawable中的图片
+         * 设置drawable中的图片
          *
          * @param viewId
          * @param resId

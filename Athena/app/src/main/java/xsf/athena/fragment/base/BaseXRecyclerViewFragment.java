@@ -116,14 +116,6 @@ public abstract class BaseXRecyclerViewFragment<T> extends BaseFragment {
                 mCurrentPageIndex++;
                 break;
         }
-        /*new Thread(new Runnable() {
-            @Override
-            public void run() {
-                //加载数据
-                loadData();
-            }
-        }).start();
-*/
         //加载数据
         loadData();
 
@@ -138,7 +130,7 @@ public abstract class BaseXRecyclerViewFragment<T> extends BaseFragment {
 
         final String reqUrl = getUrl(mCurrentPageIndex);
         if (!Tools.isNetworkConnected(getMyContext())) {
-            //无网络
+            //无网络则获取缓存数据
             String result = obtainOfflineData(getUrl(1));
             LogUtil.d("无网络" + result);
             onDataSuccessReceived(result);
@@ -185,6 +177,11 @@ public abstract class BaseXRecyclerViewFragment<T> extends BaseFragment {
         }
     }
 
+    /**
+     * 成功接收消息
+     *
+     * @param result
+     */
     private void onDataSuccessReceived(String result) {
         if (!Tools.isNullOrEmpty(result)) {
             List<T> list = parseData(result);
@@ -214,6 +211,9 @@ public abstract class BaseXRecyclerViewFragment<T> extends BaseFragment {
             mRecyclerView.loadMoreComplete();
     }
 
+    /**
+     * 设置加载错误的布局
+     */
     private void onDataErrorReceived() {
         // LogUtil.d("onDataErrorReceived");
         mLLReloadWarp.setVisibility(View.VISIBLE);

@@ -101,7 +101,6 @@ public class ImageFragment extends BaseFragment implements ImgView, SwipeRefresh
         }
         mData.addAll(list);
         mAdapter.setmDate(mData);
-
     }
 
     @Override
@@ -117,7 +116,7 @@ public class ImageFragment extends BaseFragment implements ImgView, SwipeRefresh
     }
 
     @Override
-    public void showLoadFailMsg() {
+    public void loadFailMsg() {
         View view = getActivity() == null ? mRecyclerView.getRootView() : getActivity().findViewById(R.id.drawer_layout);
         Snackbar.make(view, "加载失败，请检查网络", Snackbar.LENGTH_SHORT).show();
     }

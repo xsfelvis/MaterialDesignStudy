@@ -17,11 +17,9 @@ import xsf.athena.utils.HttpUtil;
 import xsf.athena.utils.Tools;
 
 /**
- * Description :
- * Author : lauren
- * Email  : lauren.liuling@gmail.com
- * Blog   : http://www.liuling123.com
- * Date   : 15/12/19
+ * Author: xsf
+ * Time: created at 2016/4/28.
+ * Email: xsf_uestc_ncl@163.com
  */
 public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ItemViewHolder> {
 
@@ -65,8 +63,8 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ItemViewHold
             height = mMaxHeight;
         }
         holder.mImage.setLayoutParams(new LinearLayout.LayoutParams(mMaxWidth, height));
-        HttpUtil.getInstance().loadImage(imageBean.thumburl, holder.mImage,true);
-      //  ImageLoaderUtils.display(mContext, holder.mImage, imageBean.thumburl);
+        HttpUtil.getInstance().loadImage(imageBean.thumburl, holder.mImage, true);
+        //  ImageLoaderUtils.display(mContext, holder.mImage, imageBean.thumburl);
 
     }
 
@@ -105,7 +103,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ItemViewHold
         @Override
         public void onClick(View view) {
             if (mOnItemClickListener != null) {
-                mOnItemClickListener.onItemClick(view, this.getPosition());
+                mOnItemClickListener.onItemClick(view, getAdapterPosition());
             }
         }
     }

@@ -42,7 +42,6 @@ public class StudyListFragment extends BaseXRecyclerViewFragment {
         try {
             jsonObject = new JSONObject(result);
             Gson gson = new Gson();
-            // list = gson.fromJson(jsonObject.getString("results"), new TypeToken<List<GanHuoBean>>() {}.getType());
             list = gson.fromJson(jsonObject.getString("results"), new TypeToken<List<GanHuoBean>>() {
             }.getType());
 
@@ -65,7 +64,7 @@ public class StudyListFragment extends BaseXRecyclerViewFragment {
     protected RVXBaseAdapter setAdapter() {
         mRVBaseAdapter = new RVXBaseAdapter<GanHuoBean>(new ArrayList<GanHuoBean>(), getMyContext()) {
 
-            protected void onBindDataToView(RvCommomViewHolder holder, GanHuoBean bean) {
+            protected void onBindData(RvCommomViewHolder holder, GanHuoBean bean) {
                 holder.getView(R.id.tv_desc).setVisibility(View.GONE);
                 holder.getView(R.id.iv_img).setVisibility(View.GONE);
                 holder.getView(R.id.fl_head_date_wrap).setVisibility(View.GONE);
